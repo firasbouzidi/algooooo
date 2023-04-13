@@ -1,0 +1,18 @@
+
+    PROCEDURE insertion_sort (VAR arr : ARRAY_OF INTEGER)
+VAR
+    i,j,current : INTEGER ;
+
+BEGIN
+    FOR i := 2 TO LENGTH(arr) DO    // Start from the second element of the array
+        current := arr[i];
+        j := i - 1;
+
+        WHILE (j >= 0) AND (arr[j] > current) DO
+            arr[j+1] := arr[j];    // Shift the elements to the right
+            j := j - 1;
+        END WHILE
+
+        arr[j+1] := current;    // Insert the current element into the correct position
+    END FOR
+END
